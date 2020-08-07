@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path')
-// const sqlite3 = require('sqlite3').verbose();
 var cookieParser = require('cookie-parser');
 
 const apiRouter = require('./routes/index');
@@ -20,7 +19,8 @@ app.use(cookieParser());
 app.use('/api', apiRouter)
 
 app.post('/cookie', (req, res) => {
-  res.json({ login: (req.cookies.token ? true : false) });
+  const token = req.cookies.token;
+  res.json({ login: (token ? token : null) });
 })
 
 app.get('/', (req, res) => {

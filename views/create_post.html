@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- bootstrap -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- css -->
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/create_post.css" />
 
@@ -56,7 +58,7 @@
                     </div>
                     <div>
                         <label for="age">나이</label>
-                        <input id="age" reqired name="age" /><span>세</span>
+                        <input id="age" type="number" required name="age" /><span>세</span>
                     </div>
                     <label for="info">어떤 사람인가요?</label>
                     <textarea id="info" cols="2" name="info"></textarea>
@@ -65,8 +67,8 @@
                 <div class="container">
                     <h3>when</h3>
                     <div>
-                        <input type="date" id="start_date" name="start_date" /><span>~</span>
-                        <input type="date" id="end_date" name="end_date" />
+                        <input type="date" id="start_date" name="start_date" required /><span>~</span>
+                        <input type="date" id="end_date" name="end_date" required />
                     </div>
                 </div>
 
@@ -74,12 +76,12 @@
                     <h3>where</h3>
                     <div>
                         <label for="place">장소</label>
-                        <input id="place" reqired name="place" />
+                        <input id="place" required name="place" />
                     </div>
                     <div>
                         <label for="group_name">그룹</label>
-                        <input id="group_name" name="group_name" />
-                        <reqired />
+                        <input id="group_name" name="group_name" required />
+                        <required />
                     </div>
                 </div>
             </div>
@@ -95,6 +97,15 @@
     </div>
     <script src="/js/common.js"></script>
     <script src="/js/create_post.js"></script>
+    <script>
+        let userId = null;
+        (async function () {
+            userId = await checkLoginState(); //로그인 체크
+            console.log(userId)
+        })();
+
+
+    </script>
 </body>
 
 </html>

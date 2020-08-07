@@ -5,9 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- bootstrap & jQuery-->
+	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 		crossorigin="anonymous"></script>
+
+	<!-- bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -21,7 +23,7 @@
 
 <body>
 	<!-- navbar -->
-	<nav class="navbar navbar-default" , style="font-family: 'GmarketSansBold';">
+	<nav class="navbar navbar-default" style="font-family: 'GmarketSansBold';">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -54,36 +56,15 @@
 	</div>
 
 	<script src="/js/common.js"></script>
+	<script src="/js/signin.js"></script>
 
 	<script>
 
-
-		function login(e) {
-			e.preventDefault();
-
-			const userId = document.getElementById("userId").value;
-			const userPw = document.getElementById("userPw").value;
-
-			console.log(userId, userPw);
-
-			fetch('/api/auth/login', {
-				method: "POST",
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					id: userId, pw: userPw
-				})
-			}).then(r => r.json())
-				.then(res => {
-					if (res.message === "success") {
-						console.log(res);
-						window.location.href = "/";
-					} else {
-						alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-					}
-				});
-		}
+		let userId = null;
+		(async function () {
+			userId = await checkLoginState(); //로그인 체크
+			console.log(userId)
+		})();
 
 		document.getElementById("loginBtn").addEventListener('click', login);
 
