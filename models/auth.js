@@ -5,7 +5,7 @@ const pool = require('../lib/database');
 /* 로그인 */
 const getUser = (id) => {
   let sql = "SELECT * FROM User WHERE id=?;";
-  return pool.query(sql, id);
+  return pool.execute(sql, [id]);
 }
 
 /* 회원추가 */

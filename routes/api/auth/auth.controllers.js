@@ -1,23 +1,28 @@
 const model = require('../../../models/auth');
 
 /*
-* POST  api/auth/login
+* POST  /api/auth/login
 */
 const login = async (req, res) => { // 게시물 가져오기
   const { id, pw } = req.body;
+  console.log(id, pw)
   const [rows] = await model.getUser(id);
   const user = rows[0];
 
-  if (user.pw === pw) {
-    res.status(200).json({ message: "success" });
-  } else {
-    res.status(401).json({ message: "unauthorized" });
+  if (user) {
+    if (user.pw === pw) {
+      res.cookie('token', "auth_token", { maxAge: 900000, httpOnly: true });
+      res.status(200).json({ message: "success" });
+    }
   }
+
+  res.status(401).json({ message: "unauthorized" });
+
 }
 
 
 /**
- * POST  api/auth/register
+ * POST  /api/auth/register
  * @param {id, pw, name, gender, age}
  */
 
