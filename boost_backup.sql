@@ -35,7 +35,7 @@ CREATE TABLE `board` (
   `story` text,
   `keywords` text,
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `board` (
 
 LOCK TABLES `board` WRITE;
 /*!40000 ALTER TABLE `board` DISABLE KEYS */;
-INSERT INTO `board` VALUES (1,'a','G',29,'골프를 좋아함','2020-07-03','2020-07-20','강남','골프 그룹','골프치다가 만남','강남 가나다라 마바사');
+INSERT INTO `board` VALUES (1,'a','G',29,'골프를 좋아함','2020-07-03','2020-07-20','강남','골프 그룹','골프치다가 만남','강남 가나다라 마바사'),(2,'a','여자',NULL,'kl;','2020-08-06','2020-08-20','kl;k','kl;k;','kl;kl;',NULL),(3,'a','여자',90,'ㅝㅏ','2020-08-07','2020-09-05','ㅜㅏㅓㅜ','ㅝㅏ','ㅝㅏ',NULL),(4,'a','여자',90,'ㅝㅏ','2020-08-07','2020-09-05','ㅜㅏㅓㅜ','ㅝㅏ','ㅝㅏ',NULL),(5,'a','남자',908,'ㅏ;ㅣ','2020-07-27','2020-07-31','ㅑㅐㅔㅔ','ㅑㅔㅐ','ㅑㅐㅑㅔㅐ',NULL),(6,'a','남자',908,'ㅏ;ㅣ','2020-07-27','2020-07-31','ㅑㅐㅔㅔ','ㅑㅔㅐ','ㅑㅐㅑㅔㅐ',NULL),(7,'a','여자',890,'ㅓㅣㅏㅓ','2020-08-07','2020-08-14','ㅓㅣㅏㅓㅏ','ㅓㅏㅣㅓ','ㅓㅏㅣ',NULL),(8,'a','여자',890,'ㅏ;ㅣ','2020-08-06','2020-08-28','ㅏㅣ;ㅏ;','ㅏ;ㅣㅏ','ㅏㅣ;ㅏ',NULL),(9,'a','남자',29,'착하고 좋은 사람','2020-08-20','2020-08-28','서울 신촌','스터디 그룹','스터디 그룹을 같이한 사람을 찾습니다. ㅜㅜ','스터디 그룹을 같이한 사람을 찾습니다. ㅜㅜ 착하고 좋은 사람 29 남자 2020-08-20 2020-08-28 서울 신촌 스터디 그룹');
 /*!40000 ALTER TABLE `board` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-07 17:52:10
+-- Dump completed on 2020-08-08 11:21:16

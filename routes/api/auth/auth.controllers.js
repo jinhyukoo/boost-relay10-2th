@@ -12,7 +12,7 @@ const login = async (req, res) => { // 게시물 가져오기
   if (user) {
     if (user.pw === pw) {
       res.cookie('token', id, { maxAge: 1000 * 60 * 60 }); //밀리초 단위 => 1시간
-      res.status(200).json({ message: "success" });
+      return res.status(200).json({ message: "success" });
     }
   }
   res.status(401).json({ message: "unauthorized" });

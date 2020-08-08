@@ -1,6 +1,7 @@
 const postButton = document.getElementById("form-btn");
 
-postButton.addEventListener("click", async () => {
+postButton.addEventListener("click", async (e) => {
+  e.preventDefault();
   const id = "a"; // 우선은..
   const genderRadioButton = document.getElementsByName("gender");
   let checked_index = -1;

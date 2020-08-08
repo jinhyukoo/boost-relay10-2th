@@ -20,7 +20,7 @@ exit
 
 5. 아래 명령으로 백업한 db를 mysql 에 넣음
 ```
-mysql -uroot -p boost < boost_0807.sql 
+mysql -uroot -p boost < boost_backup.sql 
 ```
 ---
 ### rest api

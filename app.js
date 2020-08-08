@@ -39,6 +39,9 @@ app.get('/posts', (req, res) => {
 })
 
 app.get('/posts/write', (req, res) => {
+  if (!req.cookies.token) {
+    return res.redirect('/login');
+  }
   res.sendFile(getPath('/views/create_post.html'));
 })
 
