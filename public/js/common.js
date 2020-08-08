@@ -35,3 +35,10 @@ const logout = async () => {
     loginBtn.innerHTML = "로그인";
   }
 }
+
+
+let userId = null;
+(async function () {
+  userId = await checkLoginState(); //로그인 체크
+  console.log(userId)
+})();

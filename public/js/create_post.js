@@ -2,7 +2,8 @@ const postButton = document.getElementById("form-btn");
 
 postButton.addEventListener("click", async (e) => {
   e.preventDefault();
-  const id = "a"; // 우선은..
+  const id = await checkLoginState() ?? "a"; // 우선은..
+  console.log("id", id)
   const genderRadioButton = document.getElementsByName("gender");
   let checked_index = -1;
   let checked_value = "";
