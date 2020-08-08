@@ -1,4 +1,4 @@
-## 🧑 api 서버
+## 🧑 서비스 명 : 사람 찾습니다
 
 ### 아래 세팅을 완료하고 서버 실행
 ---
@@ -46,20 +46,23 @@ node app.js
 
 ### rest api
 
-1. 게시글 select 쿼리
+1. 게시글 select
     - GET /api/posts
  
-2. 게시글 insert 쿼리
+2. 게시글 insert
     - POST /api/posts
     - body : id, gender, age, info, start_date, end_date, place, group_name, story
 
-3. 게시글 키워드로 검색 쿼리 
+3. 게시글 키워드로 검색 
     - GET /api/posts/search/:keyword
 
-4. 로그인 쿼리
+4. 로그인
     - POST /api/auth/login
     - body : id, pw
 
-5. 회원 추가 => 임의의 회원정보 넣을 때 사용
+5. 로그아웃
+    - POST /api/auth/logout
+
+6. 회원 추가 => 임의의 회원정보 넣을 때 사용
     - POST /api/auth/register
     - body : id, pw, name, gender, age
