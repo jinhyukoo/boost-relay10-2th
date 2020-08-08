@@ -1,4 +1,5 @@
 const model = require('../../../models/posts');
+const mecab = require('mecab-ya');
 
 /*
 * GET  api/posts
@@ -20,13 +21,15 @@ const getPosts = async (req, res) => { // 게시물 가져오기
 const createPost = async (req, res) => {// 게시물 생성
   console.log(req.body)
   const { id, gender, age, info, start_date, end_date, place, group_name, story } = req.body;
-  console.log(id, gender, age, info, start_date, end_date, place, group_name, story)
-  try {
-    const ret = await model.createPost(id, gender, age, info, start_date, end_date, place, group_name, story);
-    res.status(201).json({ message: 'success' });
-  } catch (err) {
-    res.status(500).json({ message: 'Internal server error' });
-  }
+  mecab.nouns([id, gender, age, info, start_date, end_date, place, group_name, story].join(" "), function (err, keywords) {
+    console.log(keywords);
+    try {
+      const ret = await model.createPost(id, gender, age, info, start_date, end_date, place, group_name, story, keywords);
+      res.status(201).json({ message: 'success' });
+    } catch (err) {
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  });
 }
 
 

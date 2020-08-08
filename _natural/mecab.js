@@ -26,8 +26,3 @@ mecab.nouns(text, function (err, result) {
       [ '아버지', '방' ]
   */
 });
-
-(async () => {
-  const ret = await mecab.nouns(["a", "123"].join(" "));
-  console.log("ret", ret)
-})()
