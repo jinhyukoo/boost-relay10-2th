@@ -4,8 +4,8 @@ const datas = [
     gender: "남성",
     age: 3,
     info: "이사람은 00한 사람입니다.",
-    from: "19940102",
-    to: "19950102",
+    start_date: "19940102",
+    end_date: "19950102",
     place: "제주",
     group_name: "11초등학교",
     story: "00한 옛날 친구를 찾습니다!",
@@ -16,8 +16,8 @@ const datas = [
     gender: "남성",
     age: 12,
     info: "이사람은 00한 사람입니다.",
-    from: "19940102",
-    to: "19950102",
+    start_date: "19940102",
+    end_date: "19950102",
     place: "서울",
     group_name: "11초등학교",
     story: "00한 옛날 친구를 찾습니다!",
@@ -28,8 +28,8 @@ const datas = [
     gender: "남성", //o 그아래 한줄
     age: 29, //o
     info: "이사람은 00한 사람입니다.", //x
-    from: "19940102", //o
-    to: "19950102", //o 이거 2개 한줄
+    start_date: "19940102", //o
+    end_date: "19950102", //o 이거 2개 한줄
     place: "제주", //o
     group_name: "22초등학교", //o 이거 2개 한줄
     story: "00한 옛날 친구를 찾습니다!",
@@ -45,7 +45,7 @@ const components = (posts) => posts.map((item) => {
   return `<article class='posts'>
       <div class='no'>No.${item.no}</div>
       <div class='who'>Who? ${item.age}세 ${item.gender === "M" ? "남자" : "여자"}</div>
-      <div class='when'>When? ${item.from} ~ ${item.to}</div>
+      <div class='when'>When? ${item.start_date} ~ ${item.end_date}</div>
       <div class='where'>Where? ${item.place} ${item.group_name}</div>
       <div class='keyword'>${item.keywords}</div>
       <button class="article-button">글 확인</button>
