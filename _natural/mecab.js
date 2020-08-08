@@ -11,7 +11,7 @@ const getNounsByText = (text) => {
   });
 }
 
-console.log(getNounsByText(text));
+console.log("test", getNounsByText(text));
 
 mecab.pos(text, function (err, result) {
   console.log(result);
