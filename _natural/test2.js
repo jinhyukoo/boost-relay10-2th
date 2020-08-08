@@ -1,4 +1,4 @@
-const { KMR, KKMA } = require('koalanlp/API');
+const { KMR, KKMA, ARIRANG, EUNJEON, RHINO, DAON, KHAIII, UTAGGER, OKT, HNN, ETRI } = require('koalanlp/API');
 const { initialize } = require('koalanlp/Util');
 const { Tagger, Parser } = require('koalanlp/proc');
 
