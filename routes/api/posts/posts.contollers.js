@@ -28,6 +28,7 @@ const createPost = async (req, res) => {// 게시물 생성
       const ret = await model.createPost(id, gender, age, info, start_date, end_date, place, group_name, story, `${keywords.concat(start_date, end_date)}`);
       res.status(201).json({ message: 'success' });
     } catch (err) {
+      console.log(err);
       res.status(500).json({ message: 'Internal server error' });
     }
   });
