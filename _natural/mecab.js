@@ -30,5 +30,5 @@ mecab.nouns(text, function (err, result) {
 (async () => {
   const { id, gender, age, info, start_date, end_date, place, group_name, story } = req.body;
   const [err, result] = await mecab.nouns([id, gender, age, info, start_date, end_date, place, group_name, story].join(" "));
-  console.log(err, result)
+  console.log("result", result)
 })()
