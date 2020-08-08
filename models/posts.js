@@ -10,9 +10,7 @@ const getAllPosts = () => {
 const createPost = (id, gender, age, info, start_date, end_date, place, group_name, story, keywords) => {
   // TODO :: 일단 keywords 대신에 모든 정보를 넣었음 , 추후 형태소 분석 구현시 대체할 것
   let sql = `INSERT into Board (id, gender, age, info, start_date, end_date, place, group_name, story, keywords) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
-  return pool.execute(sql, [id, gender, age, info, start_date, end_date, place, group_name, story, keywords]);
-  // return pool.execute(sql, [id, gender, age, info, start_date, end_date, place, group_name, story,
-  //   `${story} ${info} ${age ? age + "세" : ""} ${gender} ${start_date} ${end_date} ${place} ${group_name}`]);
+  return pool.execute(sql, [id, gender, age, info, start_date, end_date, place, group_name, story, ...keywords.join(" ")]);
 }
 
 /* 키워드로 게시판 글 검색 */
