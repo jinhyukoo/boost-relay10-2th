@@ -21,7 +21,7 @@ const getPosts = async (req, res) => { // 게시물 가져오기
 const createPost = async (req, res) => {// 게시물 생성
   console.log(req.body)
   const { id, gender, age, info, start_date, end_date, place, group_name, story } = req.body;
-  mecab.nouns([id, gender, age, info, start_date, end_date, place, group_name, story].join(" "), function (err, keywords) {
+  mecab.nouns([id, gender, age, info, start_date, end_date, place, group_name, story].join(" "), async function (err, keywords) {
     console.log(keywords);
     try {
       const ret = await model.createPost(id, gender, age, info, start_date, end_date, place, group_name, story, keywords);
