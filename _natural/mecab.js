@@ -1,19 +1,5 @@
-var mecab = require('mecab-ya');
-var text = '아버지가방에들어가신다';
-
-const getNounsByText = async (text) => {
-  mecab.nouns(text, function (err, result) {
-    console.log(result);
-    return result;
-    /*
-        [ '아버지', '방' ]
-    */
-  });
-}
-
-(async () => {
-  console.log("test", await getNounsByText(text));
-})()
+const mecab = require('mecab-ya');
+const text = '아버지가방에들어가신다';
 
 mecab.pos(text, function (err, result) {
   console.log(result);
