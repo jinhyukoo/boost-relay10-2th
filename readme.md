@@ -1,28 +1,49 @@
 ## 🧑 api 서버
 
-### 사용법 하단 참고
+### 아래 세팅을 완료하고 서버 실행
 ---
 ### config 설정
 
-1. config.js 파일에 패스워드를 본인컴퓨터의 mysql 비번으로 수정할 것
+1. config.js 파일에 패스워드 항목을 본인컴퓨터의 mysql 비번으로 수정할 것
 
 2. mysql 접속
 
 3. mysql 안에 boost database 생성, 아래 명령 사용
-```
-create database boost;
-```
+    ```
+    create database boost;
+    ```
 
 4. mysql 종료
-```
-exit
-```
+    ```
+    exit
+    ```
 
 5. 아래 명령으로 백업한 db를 mysql 에 넣음
-```
-mysql -uroot -p boost < boost_backup.sql 
-```
+    ```
+    mysql -uroot -p boost < boost_backup.sql 
+    ```
+
 ---
+
+### package 설치
+```
+npm i
+```
+
+### mecab 설치 
+```
+npm i --save mecab-ya
+node_modules/mecab-ya/bin/install-mecab
+node_modules/mecab-ya/bin/install-mecab ko
+```
+
+### 서버 시작 (pm2로 실행 권장)
+```
+node app.js
+```
+
+
+
 ### rest api
 
 1. 게시글 select 쿼리
