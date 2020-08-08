@@ -1,6 +1,18 @@
 var mecab = require('mecab-ya');
 var text = '아버지가방에들어가신다';
 
+const getNounsByText = (text) => {
+  mecab.nouns(text, function (err, result) {
+    console.log(result);
+    return result;
+    /*
+        [ '아버지', '방' ]
+    */
+  });
+}
+
+console.log(getNounsByText(text));
+
 mecab.pos(text, function (err, result) {
   console.log(result);
   /*
